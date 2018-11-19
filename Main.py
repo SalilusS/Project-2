@@ -4,7 +4,7 @@ import random
 number = random.randint(1000, 9999)
 m_number = [number//1000, number%1000 - number%100, number%100 - number%10, number%10]
 def search():
-    true = 0
+    true = "-"
     try:
         player = int(input())
     except ValueError:
@@ -13,11 +13,11 @@ def search():
         m_player = [player//1000, player%1000 - player%100, player%100 - player%10, player%10]
         for step in range(4):
             if m_player[step] == m_number[step]:
-                true += 1
-        if true == 4:
+                true = true + str(step+1)
+        if player == number:
             print("Браво! Загаданное число:", player)
         else:
-            print(true, "верно!")
+            print(true)
             search()
     else:
         print("Введите четырёхзначное число!")
