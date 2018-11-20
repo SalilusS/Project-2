@@ -20,7 +20,7 @@ def level():
         print(Local.RU_ANGRY_ANSWER)
         return 2
 def search(limit):
-    true = "-"
+    true = Local.RU_DASH
     try:
         player = int(input())
     except ValueError:
